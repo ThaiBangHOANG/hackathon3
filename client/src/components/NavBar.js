@@ -36,7 +36,7 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="sticky" color="inherit" elevation={1}>
+    <AppBar position='sticky' color='inherit' elevation={1}>
       <Toolbar disableGutters={isMobile}>
         {!searchOpen && (
           <>
@@ -44,32 +44,21 @@ const NavBar = () => {
               <div className={classes.logoWrapper}>
                 <Button
                   className={classes.logo}
-                  color="primary"
+                  color='primary'
                   component={RouterLink}
-                  to="/"
-                  startIcon={<RedditIcon fontSize="large" />}
-                  size="large"
+                  to='/'
+                  startIcon={<RedditIcon fontSize='large' />}
+                  size='large'
                 >
-                  reddish
+                  Fiverr
                 </Button>
-                <Typography variant="caption" color="secondary">
-                  Made with <FavoriteIcon style={{ fontSize: 12 }} /> by
-                  <Link
-                    href={'https://github.com/amand33p'}
-                    color="inherit"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    <strong>{` amand33p`}</strong>
-                  </Link>
-                </Typography>
               </div>
               {!isMobile && <SearchBar />}
             </div>
             {isMobile ? (
               <>
                 <IconButton
-                  color="primary"
+                  color='primary'
                   className={classes.searchBtn}
                   onClick={() => setSearchOpen((prevState) => !prevState)}
                 >

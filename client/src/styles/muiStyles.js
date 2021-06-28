@@ -58,7 +58,7 @@ export const useNavStyles = makeStyles(
     },
     titleButton: {
       textTransform: 'none',
-      fontSize: 20,
+      fontSize: 200,
       marginRight: 12,
     },
     navButtons: {
