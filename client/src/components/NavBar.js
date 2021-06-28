@@ -60,7 +60,7 @@ const NavBar = () => {
                     target='_blank'
                     rel='noopener'
                   >
-                    <strong>{` amand33p`}</strong>
+                    <strong>{` trois mousquetaires`}</strong>
                   </Link>
                 </Typography>
               </div>
