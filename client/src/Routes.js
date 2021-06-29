@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Router } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import PostFormModal from './components/PostFormModal';
 import PostList from './components/PostList';
 import PostCommentsPage from './components/PostCommentsPage';
@@ -39,14 +39,14 @@ const Routes = () => {
       <Route exact path='/search/:query'>
         <SearchResults />
       </Route>
-      <Route>
-        <NotFoundPage />
-      </Route>
-      <Route exact path='/chat '>
+      <Route exact path='/cha'>
         <Join />
       </Route>
-      <Route exact path='/chatplus '>
+      <Route exact path='/chat'>
         <Chat />
+      </Route>
+      <Route>
+        <NotFoundPage />
       </Route>
     </Switch>
   );
