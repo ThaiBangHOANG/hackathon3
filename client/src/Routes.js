@@ -42,10 +42,12 @@ const Routes = () => {
       <Route>
         <NotFoundPage />
       </Route>
-      <Router>
-        <Route path='/' exact component={Join} />
-        <Route path='/chat' component={Chat} />
-      </Router>
+      <Route exact path='/chat '>
+        <Join />
+      </Route>
+      <Route exact path='/chatplus '>
+        <Chat />
+      </Route>
     </Switch>
   );
 };
