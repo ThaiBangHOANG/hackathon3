@@ -64,7 +64,7 @@ const AuthFormModal = ({ closeMobileMenu, type }) => {
         </MenuItem>
       ) : (
         <Button
-          color="primary"
+          color='primary'
           onClick={handleClickOpen}
           className={classesBtn.navButtons}
         >
@@ -74,7 +74,7 @@ const AuthFormModal = ({ closeMobileMenu, type }) => {
       <Dialog
         open={open}
         onClose={handleClose}
-        maxWidth="md"
+        maxWidth='md'
         classes={{ paper: classes.dialogWrapper }}
       >
         <DialogTitle onClose={handleClose}></DialogTitle>

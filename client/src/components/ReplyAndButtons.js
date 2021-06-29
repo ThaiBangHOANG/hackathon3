@@ -42,7 +42,7 @@ const ReplyAndButtons = ({ isMobile, reply, postId, commentId, user }) => {
   return (
     <div>
       {!editOpen ? (
-        <Typography variant="body2">{reply.replyBody}</Typography>
+        <Typography variant='body2'>{reply.replyBody}</Typography>
       ) : (
         <div className={classes.inputDiv}>
           <TextField
@@ -53,25 +53,25 @@ const ReplyAndButtons = ({ isMobile, reply, postId, commentId, user }) => {
             rowsMax={Infinity}
             value={editInput}
             onChange={(e) => setEditInput(e.target.value)}
-            variant="outlined"
+            variant='outlined'
             size={isMobile ? 'small' : 'medium'}
           />
           <div className={classes.submitBtns}>
             <Button
               onClick={() => setEditOpen(false)}
-              color="primary"
-              variant="outlined"
-              size="small"
+              color='primary'
+              variant='outlined'
+              size='small'
               className={classes.cancelBtn}
             >
               Cancel
             </Button>
             <Button
               onClick={handleEditReply}
-              color="primary"
-              variant="contained"
+              color='primary'
+              variant='contained'
               startIcon={<SendIcon />}
-              size="small"
+              size='small'
               disabled={submitting}
             >
               {submitting ? 'Updating' : 'Update'}
@@ -82,15 +82,15 @@ const ReplyAndButtons = ({ isMobile, reply, postId, commentId, user }) => {
       {user && user.id === reply.repliedBy.id && (
         <div className={classes.btnBar}>
           <Button
-            size="small"
-            color="inherit"
+            size='small'
+            color='inherit'
             startIcon={<EditIcon />}
             className={classes.btnStyle}
             onClick={() => setEditOpen((prevState) => !prevState)}
           >
             Edit
           </Button>
-          <DeleteDialog type="comment" handleDelete={handleReplyDelete} />
+          <DeleteDialog type='comment' handleDelete={handleReplyDelete} />
         </div>
       )}
     </div>

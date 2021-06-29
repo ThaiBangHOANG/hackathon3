@@ -79,7 +79,7 @@ const UserPostCard = ({ post, user, isMobile }) => {
       : textSubmission.slice(0, 100).concat('....'));
 
   return (
-    <Paper variant="outlined" className={classes.mainPaper}>
+    <Paper variant='outlined' className={classes.mainPaper}>
       <div className={classes.votesWrapper}>
         <UpvoteButton
           user={user}
@@ -88,7 +88,7 @@ const UserPostCard = ({ post, user, isMobile }) => {
           size={isMobile ? 'small' : 'medium'}
         />
         <Typography
-          variant="body1"
+          variant='body1'
           style={{
             color: isUpvoted
               ? '#FF8b60'
@@ -114,11 +114,11 @@ const UserPostCard = ({ post, user, isMobile }) => {
         component={RouterLink}
         to={`/comments/${id}`}
       >
-        <Typography variant="subtitle2">
+        <Typography variant='subtitle2'>
           <Link component={RouterLink} to={`/r/${subreddit.subredditName}`}>
             {`r/${subreddit.subredditName} `}
           </Link>
-          <Typography variant="caption" className={classes.userAndDate}>
+          <Typography variant='caption' className={classes.userAndDate}>
             • Posted by
             <Link component={RouterLink} to={`/u/${author.username}`}>
               {` u/${author.username} `}
@@ -131,19 +131,19 @@ const UserPostCard = ({ post, user, isMobile }) => {
             )}
           </Typography>
         </Typography>
-        <Typography variant="h5" className={classes.title}>
+        <Typography variant='h5' className={classes.title}>
           {title}
         </Typography>
         {postType === 'Text' ? (
-          <Typography variant="body1">
+          <Typography variant='body1'>
             {ReactHtmlParser(trimmedText)}
           </Typography>
         ) : postType === 'Image' ? (
           <a
             href={imageSubmission.imageLink}
             alt={title}
-            target="_blank"
-            rel="noopener noreferrer"
+            target='_blank'
+            rel='noopener noreferrer'
             className={classes.imagePost}
           >
             <img
@@ -154,13 +154,13 @@ const UserPostCard = ({ post, user, isMobile }) => {
           </a>
         ) : (
           <Link href={fixUrl(linkSubmission)}>
-            {formattedLink} <OpenInNewIcon fontSize="inherit" />
+            {formattedLink} <OpenInNewIcon fontSize='inherit' />
           </Link>
         )}
         <div>
           <Button
-            color="primary"
-            size="small"
+            color='primary'
+            size='small'
             startIcon={<CommentIcon />}
             className={classes.commentsBtn}
             component={RouterLink}

@@ -124,7 +124,7 @@ const AddPostForm = ({
           <Form className={classes.form}>
             {actionType !== 'edit' && (
               <ButtonGroup
-                color="secondary"
+                color='secondary'
                 fullWidth
                 className={classes.typeBtnGroup}
               >
@@ -160,13 +160,13 @@ const AddPostForm = ({
             <div className={classes.input}>
               <Typography
                 className={classes.inputIconText}
-                color="primary"
-                variant="h5"
+                color='primary'
+                variant='h5'
               >
                 r/
               </Typography>
               <Autocomplete
-                name="subreddit"
+                name='subreddit'
                 onChange={(e, value) =>
                   setFieldValue('subreddit', value ? value.id : '')
                 }
@@ -185,7 +185,7 @@ const AddPostForm = ({
                         ? 'Choose a subreddish'
                         : fromSubreddit.subredditName
                     }
-                    placeholder="Search by name"
+                    placeholder='Search by name'
                     required
                     disabled={actionType === 'edit' || !!fromSubreddit}
                   />
@@ -193,12 +193,12 @@ const AddPostForm = ({
               />
             </div>
             <div className={classes.input}>
-              <TitleIcon className={classes.inputIcon} color="primary" />
+              <TitleIcon className={classes.inputIcon} color='primary' />
               <TextInput
-                name="title"
-                type="text"
-                placeholder="Enter title"
-                label="Title"
+                name='title'
+                type='text'
+                placeholder='Enter title'
+                label='Title'
                 required
                 fullWidth
                 disabled={actionType === 'edit'}
@@ -206,15 +206,15 @@ const AddPostForm = ({
             </div>
             {values.postType === 'Text' && (
               <div className={classes.textInput}>
-                <ChatIcon className={classes.inputIcon} color="primary" />
+                <ChatIcon className={classes.inputIcon} color='primary' />
                 <TextInput
-                  name="textSubmission"
+                  name='textSubmission'
                   placeholder={`Enter text (HTML supported. For ex, "<h1>Like this?</h1>")`}
                   multiline
-                  label="Text"
+                  label='Text'
                   required={values.postType === 'Text'}
                   fullWidth
-                  variant="outlined"
+                  variant='outlined'
                   rows={4}
                   maxRows={Infinity}
                 />
@@ -223,20 +223,20 @@ const AddPostForm = ({
             {values.postType === 'Image' && (
               <div className={classes.imageInput}>
                 <div className={classes.imageBtnsWrapper}>
-                  <ImageIcon className={classes.inputIcon} color="primary" />
+                  <ImageIcon className={classes.inputIcon} color='primary' />
                   <input
-                    type="file"
-                    id="image-upload"
-                    accept="image/*"
+                    type='file'
+                    id='image-upload'
+                    accept='image/*'
                     hidden
                     onChange={(e) => fileInputOnChange(e, setFieldValue)}
                     required={values.postType === 'Image'}
                   />
                   <Button
-                    component="label"
-                    htmlFor="image-upload"
-                    variant="outlined"
-                    color="primary"
+                    component='label'
+                    htmlFor='image-upload'
+                    variant='outlined'
+                    color='primary'
                     fullWidth
                     startIcon={
                       values.imageSubmission ? (
@@ -255,7 +255,7 @@ const AddPostForm = ({
                   {values.imageSubmission && (
                     <IconButton
                       onClick={() => clearFileSelection(setFieldValue)}
-                      color="secondary"
+                      color='secondary'
                       size={isMobile ? 'small' : 'medium'}
                       className={classes.clearSelectionBtn}
                     >
@@ -276,12 +276,12 @@ const AddPostForm = ({
             )}
             {values.postType === 'Link' && (
               <div className={classes.input}>
-                <LinkIcon className={classes.inputIcon} color="primary" />
+                <LinkIcon className={classes.inputIcon} color='primary' />
                 <TextInput
-                  name="linkSubmission"
-                  type="text"
-                  placeholder="Enter URL"
-                  label="Link"
+                  name='linkSubmission'
+                  type='text'
+                  placeholder='Enter URL'
+                  label='Link'
                   required={values.postType === 'Link'}
                   fullWidth
                   variant={actionType === 'edit' ? 'outlined' : 'standard'}
@@ -289,10 +289,10 @@ const AddPostForm = ({
               </div>
             )}
             <Button
-              type="submit"
-              color="secondary"
-              variant="contained"
-              size="large"
+              type='submit'
+              color='secondary'
+              variant='contained'
+              size='large'
               className={classes.submitButton}
               disabled={isSubmitting}
               startIcon={postToEditId ? <EditIcon /> : <PostAddIcon />}
@@ -310,7 +310,7 @@ const AddPostForm = ({
       </Formik>
       <AlertMessage
         error={error}
-        severity="error"
+        severity='error'
         clearError={() => setError(null)}
       />
     </div>

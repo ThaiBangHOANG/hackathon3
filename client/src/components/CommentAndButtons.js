@@ -63,7 +63,7 @@ const CommentAndButtons = ({ isMobile, comment, postId, user }) => {
   return (
     <div>
       {!editOpen ? (
-        <Typography variant="body2">{comment.commentBody}</Typography>
+        <Typography variant='body2'>{comment.commentBody}</Typography>
       ) : (
         <div className={classes.inputDiv}>
           <TextField
@@ -73,25 +73,25 @@ const CommentAndButtons = ({ isMobile, comment, postId, user }) => {
             rowsMax={Infinity}
             value={editInput}
             onChange={(e) => setEditInput(e.target.value)}
-            variant="outlined"
+            variant='outlined'
             size={isMobile ? 'small' : 'medium'}
           />
           <div className={classes.submitBtns}>
             <Button
               onClick={() => setEditOpen(false)}
-              color="primary"
-              variant="outlined"
-              size="small"
+              color='primary'
+              variant='outlined'
+              size='small'
               className={classes.cancelBtn}
             >
               Cancel
             </Button>
             <Button
               onClick={handleEditComment}
-              color="primary"
-              variant="contained"
+              color='primary'
+              variant='contained'
               startIcon={<SendIcon />}
-              size="small"
+              size='small'
               disabled={submitting}
             >
               {submitting ? 'Updating' : 'Update'}
@@ -102,8 +102,8 @@ const CommentAndButtons = ({ isMobile, comment, postId, user }) => {
       <div className={classes.btnBar}>
         {user && (
           <Button
-            size="small"
-            color="inherit"
+            size='small'
+            color='inherit'
             startIcon={<ReplyIcon />}
             className={classes.btnStyle}
             onClick={() => setReplyOpen((prevState) => !prevState)}
@@ -114,15 +114,15 @@ const CommentAndButtons = ({ isMobile, comment, postId, user }) => {
         {user && user.id === comment.commentedBy.id && (
           <>
             <Button
-              size="small"
-              color="inherit"
+              size='small'
+              color='inherit'
               startIcon={<EditIcon />}
               className={classes.btnStyle}
               onClick={() => setEditOpen((prevState) => !prevState)}
             >
               Edit
             </Button>
-            <DeleteDialog type="comment" handleDelete={handleCommentDelete} />
+            <DeleteDialog type='comment' handleDelete={handleCommentDelete} />
           </>
         )}
       </div>
@@ -137,25 +137,25 @@ const CommentAndButtons = ({ isMobile, comment, postId, user }) => {
             rowsMax={Infinity}
             value={replyInput}
             onChange={(e) => setReplyInput(e.target.value)}
-            variant="outlined"
+            variant='outlined'
             size={isMobile ? 'small' : 'medium'}
           />
           <div className={classes.submitBtns}>
             <Button
               onClick={() => setReplyOpen(false)}
-              color="primary"
-              variant="outlined"
-              size="small"
+              color='primary'
+              variant='outlined'
+              size='small'
               className={classes.cancelBtn}
             >
               Cancel
             </Button>
             <Button
               onClick={handlePostReply}
-              color="primary"
-              variant="contained"
+              color='primary'
+              variant='contained'
               startIcon={<SendIcon />}
-              size="small"
+              size='small'
               disabled={submitting}
             >
               {submitting ? 'Replying' : 'Reply'}

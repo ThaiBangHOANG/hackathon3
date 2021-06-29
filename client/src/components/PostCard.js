@@ -91,7 +91,7 @@ const PostCard = ({ post, toggleUpvote, toggleDownvote }) => {
   const formattedLink = trimLink(prettifyLink(linkToShow), 30);
 
   return (
-    <Paper className={classes.root} variant="outlined">
+    <Paper className={classes.root} variant='outlined'>
       <div className={classes.votesWrapper}>
         <UpvoteButton
           user={user}
@@ -100,7 +100,7 @@ const PostCard = ({ post, toggleUpvote, toggleDownvote }) => {
           size={isMobile ? 'small' : 'medium'}
         />
         <Typography
-          variant="body1"
+          variant='body1'
           style={{
             color: isUpvoted
               ? '#FF8b60'
@@ -126,17 +126,17 @@ const PostCard = ({ post, toggleUpvote, toggleDownvote }) => {
           <RouterLink to={`/comments/${id}`}>
             <Paper elevation={0} square className={classes.thumbnail}>
               <MessageIcon
-                fontSize="inherit"
+                fontSize='inherit'
                 className={classes.thumbnailIcon}
                 style={{ color: '#787878' }}
               />
             </Paper>
           </RouterLink>
         ) : postType === 'Link' ? (
-          <a href={fixUrl(linkSubmission)} target="_noblank">
+          <a href={fixUrl(linkSubmission)} target='_noblank'>
             <Paper elevation={0} square className={classes.thumbnail}>
               <LinkIcon
-                fontSize="inherit"
+                fontSize='inherit'
                 className={classes.thumbnailIcon}
                 style={{ color: '#787878' }}
               />
@@ -148,17 +148,17 @@ const PostCard = ({ post, toggleUpvote, toggleDownvote }) => {
               className={classes.thumbnail}
               image={getEditedThumbail(imageSubmission.imageLink)}
               title={title}
-              component="a"
+              component='a'
               href={imageSubmission.imageLink}
-              target="_noblank"
+              target='_noblank'
             />
           </Paper>
         )}
       </div>
       <div className={classes.postInfoWrapper}>
-        <Typography variant="h6" className={classes.title}>
+        <Typography variant='h6' className={classes.title}>
           {title}{' '}
-          <Typography variant="caption" color="primary" className={classes.url}>
+          <Typography variant='caption' color='primary' className={classes.url}>
             <Link
               href={
                 postType === 'Link'
@@ -170,16 +170,16 @@ const PostCard = ({ post, toggleUpvote, toggleDownvote }) => {
             >
               {formattedLink}
               {postType === 'Text' ? null : (
-                <OpenInNewIcon fontSize="inherit" />
+                <OpenInNewIcon fontSize='inherit' />
               )}
             </Link>
           </Typography>
         </Typography>
-        <Typography variant="subtitle2">
+        <Typography variant='subtitle2'>
           <Link component={RouterLink} to={`/r/${subreddit.subredditName}`}>
             r/{subreddit.subredditName}
           </Link>
-          <Typography variant="caption" className={classes.userAndDate}>
+          <Typography variant='caption' className={classes.userAndDate}>
             Posted by{' '}
             <Link component={RouterLink} to={`/u/${author.username}`}>
               u/{author.username}

@@ -33,12 +33,12 @@ const SubFormModal = ({ type, handleCloseMenu }) => {
     <div>
       {type !== 'menu' ? (
         <Button
-          color="primary"
-          variant="contained"
+          color='primary'
+          variant='contained'
           onClick={handleClickOpen}
           fullWidth
           className={classes.createSubBtn}
-          size="large"
+          size='large'
           startIcon={<AddCircleIcon />}
         >
           Create New Subreddish
@@ -54,7 +54,7 @@ const SubFormModal = ({ type, handleCloseMenu }) => {
       <Dialog
         open={open}
         onClose={handleClose}
-        maxWidth="sm"
+        maxWidth='sm'
         classes={{ paper: classes.dialogWrapper }}
         fullWidth
       >
