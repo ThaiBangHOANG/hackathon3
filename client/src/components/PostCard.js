@@ -91,53 +91,118 @@ const PostCard = ({ post, toggleUpvote, toggleDownvote }) => {
   const formattedLink = trimLink(prettifyLink(linkToShow), 30);
 
   return (
-    <div
-      style={{
-        border: '1px solid #1dbf73',
-        borderRadius: '15px',
-        marginBottom: '20px',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-      }}
-    >
-      <div
-        style={{
-          width: '80%',
-          display: 'flex',
-          textAlign: 'center',
-          alignItems: 'center',
-          justifyContent: 'space-around',
-        }}
-      >
-        <div>
-          {' '}
-          <img
-            style={{
-              width: '70px',
-              height: '70px',
-              borderRadius: '100%',
-            }}
-            src='https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/09/fiverr-2018.png '
-            alt=' '
-          />{' '}
-        </div>
-        <div
+    <Paper className={classes.root} variant='outlined'>
+      <div className={classes.votesWrapper}>
+        <UpvoteButton
+          user={user}
+          body={post}
+          handleUpvote={handleUpvoteToggle}
+          size={isMobile ? 'small' : 'medium'}
+        />
+        <Typography
+          variant='body1'
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            flexDirection: 'column',
+            color: isUpvoted
+              ? '#FF8b60'
+              : isDownvoted
+              ? '#9494FF'
+              : darkMode
+              ? '#e4e4e4'
+              : '#333',
+            fontWeight: 600,
           }}
         >
-          <h1> Project </h1>
-          <p>
+          {pointsCount}
+        </Typography>
+        <DownvoteButton
+          user={user}
+          body={post}
+          handleDownvote={handleDownvoteToggle}
+          size={isMobile ? 'small' : 'medium'}
+        />
+      </div>
+      <div className={classes.thumbnailWrapper}>
+        {postType === 'Text' ? (
+          <RouterLink to={`/comments/${id}`}>
+            <Paper elevation={0} square className={classes.thumbnail}>
+              <MessageIcon
+                fontSize='inherit'
+                className={classes.thumbnailIcon}
+                style={{ color: '#787878' }}
+              />
+            </Paper>
+          </RouterLink>
+        ) : postType === 'Link' ? (
+          <a href={fixUrl(linkSubmission)} target='_noblank'>
+            <Paper elevation={0} square className={classes.thumbnail}>
+              <LinkIcon
+                fontSize='inherit'
+                className={classes.thumbnailIcon}
+                style={{ color: '#787878' }}
+              />
+            </Paper>
+          </a>
+        ) : (
+          <Paper elevation={0} square className={classes.thumbnail}>
+            <CardMedia
+              className={classes.thumbnail}
+              title={title}
+              component='a'
+              href={'none'}
+              target='_noblank'
+            />
+          </Paper>
+        )}
+      </div>
+
+      <div
+        style={{
+          border: '1px solid #1dbf73',
+          borderRadius: '15px',
+          marginBottom: '20px',
+          display: 'flex',
+          width: '500px',
+          alignItems: 'center',
+        }}
+      >
+        <div
+          style={{
+            width: '80%',
+            display: 'flex',
+            textAlign: 'center',
+            alignItems: 'center',
+            justifyContent: 'space-around',
+          }}
+        >
+          <div>
             {' '}
-            {post.author.username} <em>Date : {post.createdAt} </em>{' '}
-            {console.log(post)}{' '}
-          </p>
+            <img
+              style={{
+                width: '70px',
+                height: '70px',
+                borderRadius: '100%',
+              }}
+              src='https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/09/fiverr-2018.png '
+              alt=' '
+            />{' '}
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              flexDirection: 'column',
+            }}
+          >
+            <h1> {post.title}</h1>
+            <p>
+              {' '}
+              {post.author.username} realised for {post.title}{' '}
+              <em>Date : {post.createdAt} </em> {console.log(post)}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </Paper>
   );
 };
 

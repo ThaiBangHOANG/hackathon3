@@ -16,7 +16,7 @@ import getErrorMsg from '../utils/getErrorMsg';
 import { Typography } from '@material-ui/core';
 import { usePostListStyles } from '../styles/muiStyles';
 
-const PostList = () => {
+function PostList() {
   const [sortBy, setSortBy] = useState('Project');
   const [page, setPage] = useState(1);
   const [loadingMore, setLoadingMore] = useState(false);
@@ -92,6 +92,6 @@ const PostList = () => {
       )}
     </div>
   );
-};
+}
 
 export default PostList;
