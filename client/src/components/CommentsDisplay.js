@@ -155,7 +155,7 @@ const CommentsDisplay = ({ comments, postId, isMobile }) => {
   const commentDetails = (by, comment) => {
     return (
       <>
-        <Typography variant='caption'>
+        <Typography variant="caption">
           <Link component={RouterLink} to={`/u/${by.username}`}>
             {by.username}
           </Link>
@@ -231,11 +231,11 @@ const CommentsDisplay = ({ comments, postId, isMobile }) => {
         ))
       ) : (
         <div className={classes.noCommentsBanner}>
-          <ForumIcon color='primary' fontSize='large' />
-          <Typography variant='h5' color='secondary'>
+          <ForumIcon color="primary" fontSize="large" />
+          <Typography variant="h5" color="secondary">
             No Comments Yet
           </Typography>
-          <Typography variant='h6' color='secondary'>
+          <Typography variant="h6" color="secondary">
             Be the first to share what you think!
           </Typography>
         </div>

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link as RouterLink } from 'react-router-dom';
-import { logoutUser } from '../reducers/userReducer';
-import { notify } from '../reducers/notificationReducer';
-import MobileUserMenu from './MobileUserMenu';
-import DesktopUserMenu from './DesktopUserMenu';
-import SearchBar from './SearchBar';
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link as RouterLink } from "react-router-dom";
+import { logoutUser } from "../reducers/userReducer";
+import { notify } from "../reducers/notificationReducer";
+import MobileUserMenu from "./MobileUserMenu";
+import DesktopUserMenu from "./DesktopUserMenu";
+import SearchBar from "./SearchBar";
 
 import {
   AppBar,
@@ -15,28 +15,28 @@ import {
   Button,
   useMediaQuery,
   IconButton,
-} from '@material-ui/core';
-import { useNavStyles } from '../styles/muiStyles';
-import { useTheme } from '@material-ui/core/styles';
-import RedditIcon from '@material-ui/icons/Reddit';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import SearchIcon from '@material-ui/icons/Search';
+} from "@material-ui/core";
+import { useNavStyles } from "../styles/muiStyles";
+import { useTheme } from "@material-ui/core/styles";
+import RedditIcon from "@material-ui/icons/Reddit";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import SearchIcon from "@material-ui/icons/Search";
 
 const NavBar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const classes = useNavStyles();
 
   const handleLogout = () => {
     dispatch(logoutUser());
-    dispatch(notify(`u/${user.username} logged out`, 'success'));
+    dispatch(notify(`u/${user.username} logged out`, "success"));
   };
 
   return (
-    <AppBar position='sticky' color='inherit' elevation={1}>
+    <AppBar position="sticky" color="inherit" elevation={1}>
       <Toolbar disableGutters={isMobile}>
         {!searchOpen && (
           <>
@@ -44,21 +44,21 @@ const NavBar = () => {
               <div className={classes.logoWrapper}>
                 <Button
                   className={classes.logo}
-                  color='primary'
+                  color="primary"
                   component={RouterLink}
-                  to='/'
-                  startIcon={<RedditIcon fontSize='large' />}
-                  size='large'
+                  to="/"
+                  startIcon={<RedditIcon fontSize="large" />}
+                  size="large"
                 >
-                  Trois moustiquos
+                  Hack-Wild
                 </Button>
-                <Typography variant='caption' color='secondary'>
-                  Made with <FavoriteIcon style={{ fontSize: 12 }} /> by
+                <Typography variant="caption" color="secondary">
+                  Made <FavoriteIcon style={{ fontSize: 12 }} /> by
                   <Link
-                    href={'https://github.com/ThaiBangHOANG'}
-                    color='inherit'
-                    target='_blank'
-                    rel='noopener'
+                    href={"https://github.com/ThaiBangHOANG/hackathon3"}
+                    color="inherit"
+                    target="_blank"
+                    rel="noopener"
                   >
                     <strong>{` trois mousquetaires`}</strong>
                   </Link>
@@ -69,7 +69,7 @@ const NavBar = () => {
             {isMobile ? (
               <>
                 <IconButton
-                  color='primary'
+                  color="primary"
                   className={classes.searchBtn}
                   onClick={() => setSearchOpen((prevState) => !prevState)}
                 >

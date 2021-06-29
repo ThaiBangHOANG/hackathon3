@@ -87,14 +87,14 @@ const AddPostModal = ({
         <HideOnScroll>
           <Fab
             className={classes.fab}
-            color='primary'
+            color="primary"
             onClick={handleClickOpen}
           >
             <PostAddIcon />
           </Fab>
         </HideOnScroll>
       ) : (
-        <Paper variant='outlined' className={classes.createPostWrapper}>
+        <Paper variant="outlined" className={classes.createPostWrapper}>
           {user.avatar && user.avatar.exists ? (
             <Avatar
               alt={user.username}
@@ -106,22 +106,22 @@ const AddPostModal = ({
             </Avatar>
           )}
           <Button
-            color='primary'
-            variant='outlined'
+            color="primary"
+            variant="outlined"
             onClick={handleTextPost}
             fullWidth
             className={classes.createBtn}
             startIcon={<PostAddIcon />}
-            size='large'
+            size="large"
           >
             Create Post
           </Button>
           <div className={classes.iconGroup}>
             <IconButton onClick={handleImagePost}>
-              <ImageIcon color='primary' />
+              <ImageIcon color="primary" />
             </IconButton>
             <IconButton onClick={handleLinkPost}>
-              <LinkIcon color='primary' />
+              <LinkIcon color="primary" />
             </IconButton>
           </div>
         </Paper>
@@ -130,7 +130,7 @@ const AddPostModal = ({
         open={open}
         onClose={handleClose}
         classes={{ paper: classes.dialogWrapper }}
-        maxWidth='md'
+        maxWidth="md"
         fullWidth={true}
       >
         <DialogTitle onClose={handleClose}>

@@ -32,14 +32,14 @@ const CommentInput = ({ user, postId, isMobile }) => {
   return (
     <div className={classes.wrapper}>
       {user ? (
-        <Typography variant='body2'>
+        <Typography variant="body2">
           Comment as{' '}
           <Link component={RouterLink} to={`/u/${user.username}`}>
             {user.username}
           </Link>
         </Typography>
       ) : (
-        <Typography variant='body1'>
+        <Typography variant="body1">
           Log in or sign up to leave a comment
         </Typography>
       )}
@@ -53,13 +53,13 @@ const CommentInput = ({ user, postId, isMobile }) => {
           rowsMax={Infinity}
           value={comment}
           onChange={(e) => setComment(e.target.value)}
-          variant='outlined'
+          variant="outlined"
           size={isMobile ? 'small' : 'medium'}
         />
         <Button
-          type='submit'
-          color='primary'
-          variant='contained'
+          type="submit"
+          color="primary"
+          variant="contained"
           className={classes.commentBtn}
           startIcon={<SendIcon />}
           size={isMobile ? 'small' : 'medium'}
