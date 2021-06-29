@@ -7,8 +7,8 @@ const LoadingSpinner = ({ text }) => {
 
   return (
     <div className={classes.loadSpinner}>
-      <CircularProgress size='6em' disableShrink />
-      <Typography color='primary' variant='body1'>
+      <CircularProgress size="6em" disableShrink />
+      <Typography color="primary" variant="body1">
         {text}
       </Typography>
     </div>

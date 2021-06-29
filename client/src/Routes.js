@@ -8,17 +8,16 @@ import SubPage from './components/SubPage';
 import TopSubsPanel from './components/TopSubsPanel';
 import SearchResults from './components/SearchResults';
 import NotFoundPage from './components/NotFoundPage';
+
 import { Container } from '@material-ui/core/';
 import { useMainPaperStyles } from './styles/muiStyles';
-import Chat from './components/Chat/Chat';
-import Join from './components/Join/Join';
 
 const Routes = () => {
   const classes = useMainPaperStyles();
 
   return (
     <Switch>
-      <Route exact path='/'>
+      <Route exact path="/">
         <Container disableGutters className={classes.homepage}>
           <div className={classes.postsPanel}>
             <PostFormModal />
@@ -27,23 +26,17 @@ const Routes = () => {
           <TopSubsPanel />
         </Container>
       </Route>
-      <Route exact path='/comments/:id'>
+      <Route exact path="/comments/:id">
         <PostCommentsPage />
       </Route>
-      <Route exact path='/u/:username'>
+      <Route exact path="/u/:username">
         <UserPage />
       </Route>
-      <Route exact path='/r/:sub'>
+      <Route exact path="/r/:sub">
         <SubPage />
       </Route>
-      <Route exact path='/search/:query'>
+      <Route exact path="/search/:query">
         <SearchResults />
-      </Route>
-      <Route exact path='/cha'>
-        <Join />
-      </Route>
-      <Route exact path='/chat'>
-        <Chat />
       </Route>
       <Route>
         <NotFoundPage />

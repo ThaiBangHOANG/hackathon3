@@ -35,8 +35,8 @@ const DeleteDialog = ({ title, handleDelete, handleMenuClose, type }) => {
       {type === 'comment' ? (
         <Button
           onClick={handleClickOpen}
-          size='small'
-          color='inherit'
+          size="small"
+          color="inherit"
           startIcon={<DeleteIcon />}
           style={{ textTransform: 'none' }}
         >
@@ -45,9 +45,9 @@ const DeleteDialog = ({ title, handleDelete, handleMenuClose, type }) => {
       ) : type === 'avatar' ? (
         <Button
           onClick={handleClickOpen}
-          size='small'
-          color='secondary'
-          variant='outlined'
+          size="small"
+          color="secondary"
+          variant="outlined"
           startIcon={<DeleteIcon />}
           style={{ textTransform: 'none' }}
         >
@@ -82,17 +82,17 @@ const DeleteDialog = ({ title, handleDelete, handleMenuClose, type }) => {
         <DialogActions>
           <Button
             onClick={handleClose}
-            color='primary'
-            variant='outlined'
-            size='small'
+            color="primary"
+            variant="outlined"
+            size="small"
           >
             Cancel
           </Button>
           <Button
             onClick={handleActionClick}
-            color='primary'
-            variant='contained'
-            size='small'
+            color="primary"
+            variant="contained"
+            size="small"
           >
             {type === 'comment'
               ? 'Delete Comment'

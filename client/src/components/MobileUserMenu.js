@@ -52,11 +52,11 @@ const MobileUserMenu = ({ user, handleLogout }) => {
           ) : (
             <Avatar className={classes.avatar}>{loggedUser.username[0]}</Avatar>
           )}
-          <MoreVertIcon color='primary' />
+          <MoreVertIcon color="primary" />
         </IconButton>
       ) : (
-        <IconButton onClick={handleMenu} color='primary'>
-          <MoreVertIcon color='primary' />
+        <IconButton onClick={handleMenu} color="primary">
+          <MoreVertIcon color="primary" />
         </IconButton>
       )}
       <Menu
@@ -84,7 +84,7 @@ const MobileUserMenu = ({ user, handleLogout }) => {
                 <AccountCircleIcon style={{ marginRight: 7 }} /> My Profile
               </ListItemIcon>
             </MenuItem>
-            <SubFormModal type='menu' handleCloseMenu={handleClose} />
+            <SubFormModal type="menu" handleCloseMenu={handleClose} />
             <UpdateAvatarModal
               handleCloseMenu={handleClose}
               user={loggedUser}
@@ -94,13 +94,13 @@ const MobileUserMenu = ({ user, handleLogout }) => {
                 <PowerSettingsNewIcon style={{ marginRight: 7 }} /> Logout
               </ListItemIcon>
             </MenuItem>
-            <Divider variant='middle' />
+            <Divider variant="middle" />
             <DarkModeMenuItem closeMenu={handleClose} />
           </div>
         ) : (
           <div>
             <AuthFormModal closeMobileMenu={handleClose} />
-            <Divider variant='middle' />
+            <Divider variant="middle" />
             <DarkModeMenuItem closeMenu={handleClose} />
           </div>
         )}

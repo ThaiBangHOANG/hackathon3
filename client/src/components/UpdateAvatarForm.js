@@ -84,29 +84,29 @@ const UpdateAvatarForm = ({ closeModal }) => {
           </div>
           <div className={classes.currentAvatar}>
             <Typography
-              variant='h6'
-              color='secondary'
+              variant="h6"
+              color="secondary"
               className={classes.currentAvatarText}
             >
               Current Avatar
             </Typography>
-            <DeleteDialog type='avatar' handleDelete={handleRemoveAvatar} />
+            <DeleteDialog type="avatar" handleDelete={handleRemoveAvatar} />
           </div>
         </div>
       )}
       <div className={classes.imageBtnsWrapper}>
         <input
-          type='file'
-          id='image-upload'
-          accept='image/*'
+          type="file"
+          id="image-upload"
+          accept="image/*"
           hidden
           onChange={handleFileInputChange}
         />
         <Button
-          component='label'
-          htmlFor='image-upload'
-          variant='outlined'
-          color='primary'
+          component="label"
+          htmlFor="image-upload"
+          variant="outlined"
+          color="primary"
           fullWidth
           startIcon={avatarInput ? <CheckCircleIcon /> : <PublishIcon />}
           className={classes.selectBtn}
@@ -118,7 +118,7 @@ const UpdateAvatarForm = ({ closeModal }) => {
         {avatarInput && (
           <IconButton
             onClick={clearfileSelection}
-            color='secondary'
+            color="secondary"
             size={isMobile ? 'small' : 'medium'}
             className={classes.clearSelectionBtn}
           >
@@ -133,8 +133,8 @@ const UpdateAvatarForm = ({ closeModal }) => {
       )}
       <Button
         size={isMobile ? 'medium' : 'large'}
-        variant='contained'
-        color='secondary'
+        variant="contained"
+        color="secondary"
         className={classes.submitButton}
         fullWidth
         startIcon={<FaceIcon />}
@@ -151,7 +151,7 @@ const UpdateAvatarForm = ({ closeModal }) => {
       </Button>
       <AlertMessage
         error={error}
-        severity='error'
+        severity="error"
         clearError={() => setError(null)}
       />
     </div>
