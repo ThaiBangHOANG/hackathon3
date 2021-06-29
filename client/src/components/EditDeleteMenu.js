@@ -39,7 +39,7 @@ const EditDeleteMenu = ({
       if (location.pathname !== '/') {
         history.push('/');
       }
-      dispatch(notify(`Post deleted!`, 'success'));
+      dispatch(notify(`Prject deleted!`, 'success'));
     } catch (err) {
       dispatch(notify(getErrorMsg(err), 'error'));
     }
@@ -50,7 +50,7 @@ const EditDeleteMenu = ({
       {buttonType === 'buttonGroup' ? (
         <div style={{ display: 'flex' }}>
           <PostFormModal
-            actionType="edit"
+            actionType='edit'
             handleMenuClose={handleClose}
             postToEditType={postType}
             postToEditTitle={title}
@@ -78,7 +78,7 @@ const EditDeleteMenu = ({
           >
             <div>
               <PostFormModal
-                actionType="edit"
+                actionType='edit'
                 handleMenuClose={handleClose}
                 postToEditType={postType}
                 postToEditTitle={title}

@@ -62,7 +62,7 @@ const PostCommentsPage = () => {
   if (pageError) {
     return (
       <Container disableGutters>
-        <Paper variant="outlined" className={classes.mainPaper}>
+        <Paper variant='outlined' className={classes.mainPaper}>
           <ErrorPage errorMsg={pageError} />
         </Paper>
       </Container>
@@ -72,7 +72,7 @@ const PostCommentsPage = () => {
   if (!post || pageLoading) {
     return (
       <Container disableGutters>
-        <Paper variant="outlined" className={classes.mainPaper}>
+        <Paper variant='outlined' className={classes.mainPaper}>
           <LoadingSpinner text={'Fetching post comments...'} />
         </Paper>
       </Container>
@@ -135,7 +135,7 @@ const PostCommentsPage = () => {
 
   return (
     <Container disableGutters>
-      <Paper variant="outlined" className={classes.mainPaper}>
+      <Paper variant='outlined' className={classes.mainPaper}>
         <div className={classes.topPortion}>
           <div className={classes.votesWrapper}>
             <UpvoteButton
@@ -145,7 +145,7 @@ const PostCommentsPage = () => {
               size={isMobile ? 'small' : 'medium'}
             />
             <Typography
-              variant="body1"
+              variant='body1'
               style={{
                 color: isUpvoted
                   ? '#FF8b60'
@@ -167,11 +167,11 @@ const PostCommentsPage = () => {
             />
           </div>
           <div className={classes.postDetails}>
-            <Typography variant="subtitle2">
+            <Typography variant='subtitle2'>
               <Link component={RouterLink} to={`/r/${subreddit.subredditName}`}>
                 {`r/${subreddit.subredditName} `}
               </Link>
-              <Typography variant="caption" className={classes.userAndDate}>
+              <Typography variant='caption' className={classes.userAndDate}>
                 • Posted by
                 <Link component={RouterLink} to={`/u/${author.username}`}>
                   {` u/${author.username} `}
@@ -184,7 +184,7 @@ const PostCommentsPage = () => {
                 )}
               </Typography>
             </Typography>
-            <Typography variant="h5" className={classes.title}>
+            <Typography variant='h5' className={classes.title}>
               {title}
             </Typography>
             {postType === 'Text' ? (
@@ -193,8 +193,8 @@ const PostCommentsPage = () => {
               <a
                 href={imageSubmission.imageLink}
                 alt={title}
-                target="_blank"
-                rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
                 className={classes.imagePost}
               >
                 <img
@@ -205,14 +205,14 @@ const PostCommentsPage = () => {
               </a>
             ) : (
               <Link href={fixUrl(linkSubmission)}>
-                {formattedLink} <OpenInNewIcon fontSize="inherit" />
+                {formattedLink} <OpenInNewIcon fontSize='inherit' />
               </Link>
             )}
             <div className={classes.bottomBar}>
               <MenuItem className={classes.bottomButton}>
                 <ListItemIcon>
                   <CommentIcon className={classes.commentIcon} />
-                  <Typography variant="subtitle2">{commentCount}</Typography>
+                  <Typography variant='subtitle2'>{commentCount}</Typography>
                 </ListItemIcon>
               </MenuItem>
               {user && user.id === author.id && (
@@ -222,7 +222,7 @@ const PostCommentsPage = () => {
                   title={title}
                   postType={postType}
                   subreddit={subreddit}
-                  buttonType="buttonGroup"
+                  buttonType='buttonGroup'
                   textSubmission={textSubmission}
                   linkSubmission={linkSubmission}
                 />

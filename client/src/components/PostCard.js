@@ -91,127 +91,53 @@ const PostCard = ({ post, toggleUpvote, toggleDownvote }) => {
   const formattedLink = trimLink(prettifyLink(linkToShow), 30);
 
   return (
-    <Paper className={classes.root} variant="outlined">
-      <div className={classes.votesWrapper}>
-        <UpvoteButton
-          user={user}
-          body={post}
-          handleUpvote={handleUpvoteToggle}
-          size={isMobile ? 'small' : 'medium'}
-        />
-        <Typography
-          variant="body1"
+    <div
+      style={{
+        border: '1px solid #1dbf73',
+        borderRadius: '15px',
+        marginBottom: '20px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}
+    >
+      <div
+        style={{
+          width: '80%',
+          display: 'flex',
+          textAlign: 'center',
+          alignItems: 'center',
+          justifyContent: 'space-around',
+        }}
+      >
+        <div>
+          {' '}
+          <img
+            style={{
+              width: '70px',
+              height: '70px',
+              borderRadius: '100%',
+            }}
+            src='https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/09/fiverr-2018.png '
+            alt=' '
+          />{' '}
+        </div>
+        <div
           style={{
-            color: isUpvoted
-              ? '#FF8b60'
-              : isDownvoted
-              ? '#9494FF'
-              : darkMode
-              ? '#e4e4e4'
-              : '#333',
-            fontWeight: 600,
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column',
           }}
         >
-          {pointsCount}
-        </Typography>
-        <DownvoteButton
-          user={user}
-          body={post}
-          handleDownvote={handleDownvoteToggle}
-          size={isMobile ? 'small' : 'medium'}
-        />
-      </div>
-      <div className={classes.thumbnailWrapper}>
-        {postType === 'Text' ? (
-          <RouterLink to={`/comments/${id}`}>
-            <Paper elevation={0} square className={classes.thumbnail}>
-              <MessageIcon
-                fontSize="inherit"
-                className={classes.thumbnailIcon}
-                style={{ color: '#787878' }}
-              />
-            </Paper>
-          </RouterLink>
-        ) : postType === 'Link' ? (
-          <a href={fixUrl(linkSubmission)} target="_noblank">
-            <Paper elevation={0} square className={classes.thumbnail}>
-              <LinkIcon
-                fontSize="inherit"
-                className={classes.thumbnailIcon}
-                style={{ color: '#787878' }}
-              />
-            </Paper>
-          </a>
-        ) : (
-          <Paper elevation={0} square className={classes.thumbnail}>
-            <CardMedia
-              className={classes.thumbnail}
-              image={getEditedThumbail(imageSubmission.imageLink)}
-              title={title}
-              component="a"
-              href={imageSubmission.imageLink}
-              target="_noblank"
-            />
-          </Paper>
-        )}
-      </div>
-      <div className={classes.postInfoWrapper}>
-        <Typography variant="h6" className={classes.title}>
-          {title}{' '}
-          <Typography variant="caption" color="primary" className={classes.url}>
-            <Link
-              href={
-                postType === 'Link'
-                  ? fixUrl(linkSubmission)
-                  : postType === 'Image'
-                  ? imageSubmission.imageLink
-                  : ''
-              }
-            >
-              {formattedLink}
-              {postType === 'Text' ? null : (
-                <OpenInNewIcon fontSize="inherit" />
-              )}
-            </Link>
-          </Typography>
-        </Typography>
-        <Typography variant="subtitle2">
-          <Link component={RouterLink} to={`/r/${subreddit.subredditName}`}>
-            r/{subreddit.subredditName}
-          </Link>
-          <Typography variant="caption" className={classes.userAndDate}>
-            Posted by{' '}
-            <Link component={RouterLink} to={`/u/${author.username}`}>
-              u/{author.username}
-            </Link>{' '}
-            • <TimeAgo datetime={new Date(createdAt)} />
-            {createdAt !== updatedAt && '*'}
-          </Typography>
-        </Typography>
-        <div className={classes.bottomBtns}>
-          <Button
-            startIcon={<CommentIcon />}
-            className={classes.commentsBtn}
-            component={RouterLink}
-            to={`/comments/${id}`}
-            size={isMobile ? 'small' : 'medium'}
-          >
-            {commentCount} comments
-          </Button>
-          {user && user.id === author.id && (
-            <EditDeleteMenu
-              id={id}
-              isMobile={isMobile}
-              title={title}
-              postType={postType}
-              subreddit={subreddit}
-              textSubmission={textSubmission}
-              linkSubmission={linkSubmission}
-            />
-          )}
+          <h1> Project </h1>
+          <p>
+            {' '}
+            {post.author.username} <em>Date : {post.createdAt} </em>{' '}
+            {console.log(post)}{' '}
+          </p>
         </div>
       </div>
-    </Paper>
+    </div>
   );
 };
 

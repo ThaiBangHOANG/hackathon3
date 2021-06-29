@@ -63,7 +63,7 @@ export const useNavStyles = makeStyles(
     },
     navButtons: {
       '&:hover': {
-        backgroundColor: '#ffe5d8',
+        backgroundColor: '#1dbf73',
       },
     },
     search: {

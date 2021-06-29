@@ -10,16 +10,12 @@ import SearchBar from './SearchBar';
 import {
   AppBar,
   Toolbar,
-  Typography,
-  Link,
   Button,
   useMediaQuery,
   IconButton,
 } from '@material-ui/core';
 import { useNavStyles } from '../styles/muiStyles';
 import { useTheme } from '@material-ui/core/styles';
-import RedditIcon from '@material-ui/icons/Reddit';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import SearchIcon from '@material-ui/icons/Search';
 
 const NavBar = () => {
@@ -43,13 +39,21 @@ const NavBar = () => {
             <div className={classes.leftPortion}>
               <div className={classes.logoWrapper}>
                 <Button
-                  className={classes.logo}
                   color='primary'
                   component={RouterLink}
                   to='/'
-                  startIcon={<RedditIcon fontSize='large' />}
                   size='large'
                 >
+                  <img
+                    src='https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/09/fiverr-2018.png'
+                    alt=' red it'
+                    style={{
+                      width: '40px',
+                      height: '40px',
+                      marginRight: '10px',
+                      borderRadius: '100%',
+                    }}
+                  />
                   Fiverr
                 </Button>
               </div>

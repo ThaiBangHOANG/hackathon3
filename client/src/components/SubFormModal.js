@@ -33,32 +33,32 @@ const SubFormModal = ({ type, handleCloseMenu }) => {
     <div>
       {type !== 'menu' ? (
         <Button
-          color="primary"
-          variant="contained"
+          color='primary'
+          variant='contained'
           onClick={handleClickOpen}
           fullWidth
           className={classes.createSubBtn}
-          size="large"
+          size='large'
           startIcon={<AddCircleIcon />}
         >
-          Create New Subreddish
+          Create New Project
         </Button>
       ) : (
         <MenuItem onClick={handleOpenMenu}>
           <ListItemIcon>
             <AddCircleIcon style={{ marginRight: 7 }} />
-            Create Subreddish
+            Create Project
           </ListItemIcon>
         </MenuItem>
       )}
       <Dialog
         open={open}
         onClose={handleClose}
-        maxWidth="sm"
+        maxWidth='sm'
         classes={{ paper: classes.dialogWrapper }}
         fullWidth
       >
-        <DialogTitle onClose={handleClose}>Create a new subreddish</DialogTitle>
+        <DialogTitle onClose={handleClose}>Create a new project</DialogTitle>
         <DialogContent>
           <SubForm />
         </DialogContent>

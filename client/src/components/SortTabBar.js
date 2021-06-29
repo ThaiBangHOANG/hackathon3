@@ -1,8 +1,6 @@
 import React from 'react';
 import { ReactComponent as Best } from '../svg/best.svg';
 import { ReactComponent as Hot } from '../svg/hot.svg';
-import { ReactComponent as New } from '../svg/new.svg';
-import { ReactComponent as Top } from '../svg/top.svg';
 import { ReactComponent as Controversial } from '../svg/controversial.svg';
 import { ReactComponent as Old } from '../svg/old.svg';
 import { ReactComponent as Subscribed } from '../svg/subscribed.svg';
@@ -14,79 +12,59 @@ const SortTabBar = ({ sortBy, handleTabChange, subscribedTab, user }) => {
   const classes = useSortTabStyles();
 
   return (
-    <Paper variant="outlined" className={classes.mainPaper}>
+    <Paper
+      variant='outlined'
+      style={{
+        display: 'flex',
+        justifyContent: 'space-around',
+        margin: '20px',
+      }}
+      className={classes.mainPaper}
+    >
       <Tabs
         value={sortBy}
         onChange={handleTabChange}
-        indicatorColor="primary"
-        textColor="primary"
-        variant="scrollable"
-        scrollButtons="auto"
+        indicatorColor='primary'
+        textColor='primary'
+        variant='scrollable'
+        scrollButtons='auto'
       >
         <Tab
           icon={
-            <SvgIcon fontSize="small">
+            <SvgIcon fontSize='small'>
               <Hot />
             </SvgIcon>
           }
-          label="Hot"
-          value="hot"
+          label='Project'
+          value='Project'
         />
-        {subscribedTab && user && (
-          <Tab
-            icon={
-              <SvgIcon fontSize="small">
-                <Subscribed />
-              </SvgIcon>
-            }
-            label="Subscribed"
-            value="subscribed"
-          />
-        )}
         <Tab
           icon={
-            <SvgIcon fontSize="small">
+            <SvgIcon fontSize='small'>
               <Best />
             </SvgIcon>
           }
-          label="Best"
-          value="best"
+          label='History'
+          value='History'
         />
         <Tab
           icon={
-            <SvgIcon fontSize="small">
-              <New />
-            </SvgIcon>
-          }
-          label="New"
-          value="new"
-        />
-        <Tab
-          icon={
-            <SvgIcon fontSize="small">
-              <Top />
-            </SvgIcon>
-          }
-          label="Top"
-          value="top"
-        />
-        <Tab
-          icon={
-            <SvgIcon fontSize="small">
+            <SvgIcon fontSize='small'>
               <Controversial />
             </SvgIcon>
           }
-          label="Controversial"
-          value="controversial"
+          label='Tchat'
+          value='Tchat'
         />
         <Tab
+          style={{ display: 'none' }}
           icon={
-            <SvgIcon fontSize="small">
+            <SvgIcon fontSize='small'>
               <Old />
             </SvgIcon>
           }
-          label="Old"
-          value="old"
+          label='Old'
+          value='old'
         />
       </Tabs>
     </Paper>

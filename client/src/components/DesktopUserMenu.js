@@ -49,21 +49,21 @@ const DesktopUserMenu = ({ user, handleLogout }) => {
               <Avatar
                 alt={loggedUser.username}
                 src={getCircularAvatar(loggedUser.avatar.imageLink)}
-                variant="rounded"
+                variant='rounded'
                 className={classes.avatar}
               />
             ) : (
-              <Avatar variant="rounded" className={classes.avatar}>
+              <Avatar variant='rounded' className={classes.avatar}>
                 {loggedUser.username[0]}
               </Avatar>
             )}
             <div>
-              <Typography color="secondary">{loggedUser.username}</Typography>
-              <Typography variant="caption" className={classes.karmaWrapper}>
+              <Typography color='secondary'>{loggedUser.username}</Typography>
+              <Typography variant='caption' className={classes.karmaWrapper}>
                 <FilterVintageIcon
-                  fontSize="inherit"
+                  fontSize='inherit'
                   style={{ marginRight: '0.2em' }}
-                  color="secondary"
+                  color='secondary'
                 />
                 {loggedUser.karma} karma
               </Typography>
@@ -92,7 +92,7 @@ const DesktopUserMenu = ({ user, handleLogout }) => {
                 <AccountCircleIcon style={{ marginRight: 7 }} /> My Profile
               </ListItemIcon>
             </MenuItem>
-            <SubFormModal type="menu" handleCloseMenu={handleClose} />
+            <SubFormModal type='menu' handleCloseMenu={handleClose} />
             <UpdateAvatarModal
               handleCloseMenu={handleClose}
               user={loggedUser}
@@ -102,7 +102,7 @@ const DesktopUserMenu = ({ user, handleLogout }) => {
                 <PowerSettingsNewIcon style={{ marginRight: 7 }} /> Logout
               </ListItemIcon>
             </MenuItem>
-            <Divider variant="middle" />
+            <Divider variant='middle' />
             <DarkModeMenuItem closeMenu={handleClose} />
           </Menu>
         </>

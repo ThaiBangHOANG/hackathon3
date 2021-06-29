@@ -51,7 +51,7 @@ const UserPage = () => {
   if (pageError) {
     return (
       <Container disableGutters>
-        <Paper variant="outlined" className={classes.mainPaper}>
+        <Paper variant='outlined' className={classes.mainPaper}>
           <ErrorPage errorMsg={pageError} />
         </Paper>
       </Container>
@@ -61,8 +61,8 @@ const UserPage = () => {
   if (!userInfo || pageLoading) {
     return (
       <Container disableGutters>
-        <Paper variant="outlined" className={classes.mainPaper}>
-          <LoadingSpinner text="Fetching user data..." />
+        <Paper variant='outlined' className={classes.mainPaper}>
+          <LoadingSpinner text='Fetching user data...' />
         </Paper>
       </Container>
     );
@@ -90,8 +90,8 @@ const UserPage = () => {
 
   return (
     <Container disableGutters>
-      <Paper variant="outlined" className={classes.mainPaper}>
-        <Paper className={classes.userInfoWrapper} variant="outlined">
+      <Paper variant='outlined' className={classes.mainPaper}>
+        <Paper className={classes.userInfoWrapper} variant='outlined'>
           <div className={classes.avatarWrapper}>
             {avatar && avatar.exists ? (
               <Avatar
@@ -107,19 +107,19 @@ const UserPage = () => {
                 <h1>{userName[0]}</h1>
               </Avatar>
             )}
-            <Typography variant="h6" color="secondary">
+            <Typography variant='h6' color='secondary'>
               u/{userName}
             </Typography>
           </div>
           <div className={classes.rightWrapper}>
             <div className={classes.itemWrapper}>
               <div className={classes.twoItemsDiv}>
-                <Typography variant="body1" color="secondary">
+                <Typography variant='body1' color='secondary'>
                   Cake Day
                 </Typography>
                 <Typography
-                  variant="h6"
-                  color="secondary"
+                  variant='h6'
+                  color='secondary'
                   className={classes.cakeDay}
                 >
                   <CakeIcon />
@@ -127,28 +127,28 @@ const UserPage = () => {
                 </Typography>
               </div>
               <div className={classes.twoItemsDiv}>
-                <Typography variant="body1" color="secondary">
+                <Typography variant='body1' color='secondary'>
                   <strong>{posts.length}</strong> Posts
                 </Typography>
-                <Typography variant="body1" color="secondary">
+                <Typography variant='body1' color='secondary'>
                   <strong>{totalComments}</strong> Comments
                 </Typography>
               </div>
             </div>
-            <div className={classes.itemWrapper}>
+            <div className={classes.itemWrapper} style={{ display: 'none' }}>
               <div className={classes.twoItemsDiv}>
-                <Typography variant="body1" color="secondary">
+                <Typography variant='body1' color='secondary'>
                   Karma
                 </Typography>
-                <Typography variant="h6" color="secondary">
+                <Typography variant='h6' color='secondary'>
                   {karmaPoints.commentKarma + karmaPoints.postKarma}
                 </Typography>
               </div>
               <div className={classes.twoItemsDiv}>
-                <Typography variant="body1" color="secondary">
+                <Typography variant='body1' color='secondary'>
                   Post Karma <strong>{karmaPoints.postKarma}</strong>
                 </Typography>
-                <Typography variant="body1" color="secondary">
+                <Typography variant='body1' color='secondary'>
                   Comment Karma <strong>{karmaPoints.commentKarma}</strong>
                 </Typography>
               </div>
@@ -167,9 +167,9 @@ const UserPage = () => {
             ))
           ) : (
             <div className={classes.noPosts}>
-              <PersonIcon color="primary" fontSize="large" />
-              <Typography variant="h5" color="secondary">
-                <strong>u/{userName}</strong> has not made any posts yet
+              <PersonIcon color='primary' fontSize='large' />
+              <Typography variant='h5' color='secondary'>
+                <strong>u/{userName}</strong> has no fiverr project yet
               </Typography>
             </div>
           )}

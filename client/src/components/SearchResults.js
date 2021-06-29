@@ -44,8 +44,8 @@ const SearchResults = () => {
 
   if (!searchResults || pageLoading) {
     return (
-      <Container disableGutters>
-        <Paper variant="outlined" className={classes.mainPaper}>
+      <Container style={{ display: 'none' }} disableGutters>
+        <Paper variant='outlined' className={classes.mainPaper}>
           <LoadingSpinner text={'Searching for matches...'} />
         </Paper>
       </Container>
@@ -65,14 +65,14 @@ const SearchResults = () => {
 
   return (
     <Container disableGutters>
-      <Paper variant="outlined" className={classes.mainPaper}>
-        <Paper variant="outlined">
+      <Paper variant='outlined' className={classes.mainPaper}>
+        <Paper variant='outlined'>
           <Typography
-            variant="h6"
-            color="secondary"
+            variant='h6'
+            color='secondary'
             className={classes.infoPaper}
           >
-            <SearchIcon fontSize="large" style={{ marginRight: '7px' }} />
+            <SearchIcon fontSize='large' style={{ marginRight: '7px' }} />
             Showing search results for "{query}"
           </Typography>
         </Paper>
@@ -86,10 +86,10 @@ const SearchResults = () => {
             />
           ))
         ) : (
-          <Typography variant="h5" className={classes.noResults}>
+          <Typography variant='h5' className={classes.noResults}>
             <SentimentVeryDissatisfiedIcon
               className={classes.sorryIcon}
-              color="primary"
+              color='primary'
             />
             Sorry, there were no post results for "{query}"
           </Typography>

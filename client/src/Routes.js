@@ -17,25 +17,24 @@ const Routes = () => {
 
   return (
     <Switch>
-      <Route exact path="/">
+      <Route exact path='/'>
         <Container disableGutters className={classes.homepage}>
           <div className={classes.postsPanel}>
             <PostFormModal />
             <PostList />
           </div>
-          <TopSubsPanel />
         </Container>
       </Route>
-      <Route exact path="/comments/:id">
+      <Route exact path='/comments/:id'>
         <PostCommentsPage />
       </Route>
-      <Route exact path="/u/:username">
+      <Route exact path='/u/:username'>
         <UserPage />
       </Route>
-      <Route exact path="/r/:sub">
+      <Route exact path='/r/:sub'>
         <SubPage />
       </Route>
-      <Route exact path="/search/:query">
+      <Route exact path='/search/:query'>
         <SearchResults />
       </Route>
       <Route>

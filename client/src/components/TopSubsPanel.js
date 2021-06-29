@@ -60,22 +60,26 @@ const TopSubsPanel = () => {
   };
 
   return (
-    <Paper variant="outlined" className={classes.mainPaper}>
-      <Paper variant="outlined" className={classes.listPaper}>
-        <Typography variant="h5" color="secondary" className={classes.title}>
+    <Paper
+      variant='outlined'
+      className={classes.mainPaper}
+      style={{ display: 'none' }}
+    >
+      <Paper variant='outlined' className={classes.listPaper}>
+        <Typography variant='h5' color='secondary' className={classes.title}>
           Top Subreddishes
         </Typography>
         {loadingSubs ? (
-          <LoadingSpinner text="Fetching subs data..." />
+          <LoadingSpinner text='Fetching subs data...' />
         ) : (
           subs.topSubs.map((s, i) => (
             <div key={s.id} className={classes.listWrapper}>
-              <Typography variant="body2" className={classes.listItem}>
+              <Typography variant='body2' className={classes.listItem}>
                 {`${i + 1}. `}
                 <Link
                   component={RouterLink}
                   to={`/r/${s.subredditName}`}
-                  color="primary"
+                  color='primary'
                 >
                   r/{s.subredditName}
                 </Link>
@@ -83,9 +87,9 @@ const TopSubsPanel = () => {
               </Typography>
               {loggedUser && (
                 <Button
-                  variant="outlined"
-                  color="primary"
-                  size="small"
+                  variant='outlined'
+                  color='primary'
+                  size='small'
                   startIcon={
                     isSubscribed(s.subscribedBy, user) ? (
                       <CheckIcon />

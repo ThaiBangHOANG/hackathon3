@@ -65,52 +65,52 @@ const SubForm = () => {
             <div className={classes.input}>
               <Typography
                 className={classes.inputIconText}
-                color="primary"
-                variant="h5"
+                color='primary'
+                variant='h5'
               >
                 r/
               </Typography>
               <TextInput
-                name="subredditName"
-                type="text"
-                placeholder="Enter name"
-                label="Subreddish Name"
+                name='subredditName'
+                type='text'
+                placeholder='Enter name'
+                label='Project Name'
                 required
                 fullWidth
               />
             </div>
             <div className={classes.descInput}>
-              <InfoIcon className={classes.inputIcon} color="primary" />
+              <InfoIcon className={classes.inputIcon} color='primary' />
               <TextInput
-                name="description"
-                type="text"
-                placeholder="Enter description"
-                label="Description"
+                name='description'
+                type='text'
+                placeholder='Enter description'
+                label='Description'
                 required
                 fullWidth
-                variant="outlined"
+                variant='outlined'
                 multiline
                 rows={2}
                 maxRows={Infinity}
               />
             </div>
             <Button
-              type="submit"
-              color="secondary"
-              variant="contained"
-              size="large"
+              type='submit'
+              color='secondary'
+              variant='contained'
+              size='large'
               className={classes.submitButton}
               disabled={isSubmitting}
               startIcon={<AddIcon />}
             >
-              {isSubmitting ? 'Creating' : 'Create Subreddish'}
+              {isSubmitting ? 'Creating' : 'Create Project'}
             </Button>
           </Form>
         )}
       </Formik>
       <AlertMessage
         error={error}
-        severity="error"
+        severity='error'
         clearError={() => setError(null)}
       />
     </div>

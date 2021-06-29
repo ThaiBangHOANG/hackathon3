@@ -17,7 +17,7 @@ import { Typography } from '@material-ui/core';
 import { usePostListStyles } from '../styles/muiStyles';
 
 const PostList = () => {
-  const [sortBy, setSortBy] = useState('hot');
+  const [sortBy, setSortBy] = useState('Project');
   const [page, setPage] = useState(1);
   const [loadingMore, setLoadingMore] = useState(false);
   const [pageLoading, setPageLoading] = useState(false);
@@ -76,11 +76,11 @@ const PostList = () => {
       )}
       {sortBy === 'subscribed' && posts.results.length === 0 && (
         <div className={classes.noSubscribedPosts}>
-          <Typography variant="h5" color="secondary">
-            No Posts Found
+          <Typography variant='h5' color='secondary'>
+            No Project found
           </Typography>
-          <Typography variant="h6" color="secondary">
-            Subscribe to more subs if you haven't!
+          <Typography variant='h6' color='secondary'>
+            Create a project if you haven't
           </Typography>
         </div>
       )}
