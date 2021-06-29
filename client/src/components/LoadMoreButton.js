@@ -10,9 +10,9 @@ const LoadMoreButton = ({ handleLoadPosts, loading }) => {
   return (
     <div className={classes.loadBtnWrapper}>
       <Button
-        color="primary"
-        variant="outlined"
-        size="large"
+        color='primary'
+        variant='outlined'
+        size='large'
         onClick={handleLoadPosts}
         startIcon={<AutorenewIcon />}
         className={classes.loadBtn}

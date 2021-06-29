@@ -98,8 +98,8 @@ const AuthForm = () => {
             <>
               <Form className={classes.form}>
                 <Typography
-                  variant="h5"
-                  color="secondary"
+                  variant='h5'
+                  color='secondary'
                   className={classes.formTitle}
                 >
                   {authType === 'login'
@@ -107,37 +107,37 @@ const AuthForm = () => {
                     : 'Create a new account'}
                 </Typography>
                 <div className={classes.input}>
-                  <PersonIcon className={classes.inputIcon} color="primary" />
+                  <PersonIcon className={classes.inputIcon} color='green' />
                   <TextInput
-                    name="username"
-                    type="text"
-                    placeholder="Enter username"
-                    label="Username"
+                    name='username'
+                    type='text'
+                    placeholder='Enter username'
+                    label='Username'
                     required
                     fullWidth
                   />
                 </div>
                 <div className={classes.input}>
-                  <LockIcon className={classes.inputIcon} color="primary" />
+                  <LockIcon className={classes.inputIcon} color='green' />
                   <TextInput
-                    name="password"
+                    name='password'
                     type={showPass ? 'text' : 'password'}
-                    placeholder="Enter password"
-                    label="Password"
+                    placeholder='Enter password'
+                    label='Password'
                     required
                     fullWidth
                     InputProps={{
                       endAdornment: (
-                        <InputAdornment position="end">
+                        <InputAdornment position='end'>
                           <IconButton
                             onClick={() =>
                               setShowPass((prevState) => !prevState)
                             }
                           >
                             {showPass ? (
-                              <VisibilityOffIcon color="primary" />
+                              <VisibilityOffIcon color='green' />
                             ) : (
-                              <VisibilityIcon color="primary" />
+                              <VisibilityIcon color='green' />
                             )}
                           </IconButton>
                         </InputAdornment>
@@ -146,10 +146,10 @@ const AuthForm = () => {
                   />
                 </div>
                 <Button
-                  type="submit"
-                  color="secondary"
-                  variant="contained"
-                  size="large"
+                  type='submit'
+                  color='secondary'
+                  variant='contained'
+                  size='large'
                   startIcon={
                     authType === 'login' ? <ExitToAppIcon /> : <PersonAddIcon />
                   }
@@ -166,15 +166,15 @@ const AuthForm = () => {
                 </Button>
               </Form>
               <Divider
-                orientation="vertical"
+                orientation='vertical'
                 flexItem
                 className={classes.divider}
               />
               <div className={classes.sidePanel}>
                 <Typography
-                  variant="h6"
+                  variant='h6'
                   className={classes.switchText}
-                  color="primary"
+                  color='green'
                 >
                   {authType === 'login'
                     ? `Don't have an account?`
@@ -187,9 +187,9 @@ const AuthForm = () => {
                       : setAuthType('login')
                   }
                   fullWidth
-                  size="large"
-                  color="primary"
-                  variant="outlined"
+                  size='large'
+                  color='green'
+                  variant='outlined'
                   startIcon={
                     authType === 'login' ? <PersonAddIcon /> : <ExitToAppIcon />
                   }
@@ -205,7 +205,7 @@ const AuthForm = () => {
       <div>
         <AlertMessage
           error={error}
-          severity="error"
+          severity='error'
           clearError={() => setError(null)}
         />
       </div>

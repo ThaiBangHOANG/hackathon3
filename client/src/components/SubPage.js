@@ -71,7 +71,7 @@ const SubPage = () => {
   if (pageError) {
     return (
       <Container disableGutters>
-        <Paper variant="outlined" className={classes.mainPaper}>
+        <Paper variant='outlined' className={classes.mainPaper}>
           <ErrorPage errorMsg={pageError} />
         </Paper>
       </Container>
@@ -81,7 +81,7 @@ const SubPage = () => {
   if (!subPage || pageLoading) {
     return (
       <Container disableGutters>
-        <Paper variant="outlined" className={classes.mainPaper}>
+        <Paper variant='outlined' className={classes.mainPaper}>
           <LoadingSpinner text={'Fetching sub data...'} />
         </Paper>
       </Container>
@@ -161,15 +161,15 @@ const SubPage = () => {
 
   return (
     <Container disableGutters>
-      <Paper variant="outlined" className={classes.mainPaper}>
-        <Paper variant="outlined" className={classes.subInfoWrapper}>
+      <Paper variant='outlined' className={classes.mainPaper}>
+        <Paper variant='outlined' className={classes.subInfoWrapper}>
           <div className={classes.firstPanel}>
-            <Typography variant="h6" color="secondary">
+            <Typography variant='h6' color='secondary'>
               r/{subredditName}
             </Typography>
             <div className={classes.description}>
               {!editOpen ? (
-                <Typography variant="body1">{description}</Typography>
+                <Typography variant='body1'>{description}</Typography>
               ) : (
                 <div className={classes.inputDiv}>
                   <TextField
@@ -180,15 +180,15 @@ const SubPage = () => {
                     rowsMax={Infinity}
                     value={descInput}
                     onChange={(e) => setDescInput(e.target.value)}
-                    variant="outlined"
-                    size="small"
+                    variant='outlined'
+                    size='small'
                   />
                   <div className={classes.submitBtns}>
                     <Button
                       onClick={() => setEditOpen(false)}
-                      color="primary"
-                      variant="outlined"
-                      size="small"
+                      color='primary'
+                      variant='outlined'
+                      size='small'
                       className={classes.cancelBtn}
                       style={{ padding: '0.2em' }}
                     >
@@ -196,9 +196,9 @@ const SubPage = () => {
                     </Button>
                     <Button
                       onClick={handleEditDescription}
-                      color="primary"
-                      variant="outlined"
-                      size="small"
+                      color='primary'
+                      variant='outlined'
+                      size='small'
                       style={{ padding: '0.2em' }}
                     >
                       Update
@@ -209,9 +209,9 @@ const SubPage = () => {
               {user && user.id === admin.id && !editOpen && (
                 <Button
                   onClick={() => setEditOpen((prevState) => !prevState)}
-                  size="small"
-                  variant="outlined"
-                  color="primary"
+                  size='small'
+                  variant='outlined'
+                  color='primary'
                   style={{ padding: '0.2em', marginLeft: '0.5em' }}
                   startIcon={<EditIcon />}
                 >
@@ -220,17 +220,17 @@ const SubPage = () => {
               )}
             </div>
             <Typography
-              variant="body2"
+              variant='body2'
               className={classes.iconText}
-              color="secondary"
+              color='secondary'
             >
               <CakeIcon style={{ marginRight: 5 }} /> Created
               {' ' +
                 String(new Date(createdAt)).split(' ').slice(1, 4).join(' ')}
             </Typography>
             <Typography
-              variant="body2"
-              color="secondary"
+              variant='body2'
+              color='secondary'
               className={classes.iconText}
             >
               <PersonIcon style={{ marginRight: 5 }} />
@@ -247,8 +247,8 @@ const SubPage = () => {
           <div className={classes.secondPanel}>
             {user && (
               <Button
-                color="primary"
-                variant="contained"
+                color='primary'
+                variant='contained'
                 startIcon={isSubscribed ? <CheckIcon /> : <AddIcon />}
                 className={classes.joinBtn}
                 onClick={handleSubJoin}
@@ -257,8 +257,8 @@ const SubPage = () => {
               </Button>
             )}
             <Typography
-              variant="body2"
-              color="primary"
+              variant='body2'
+              color='primary'
               className={classes.iconText}
             >
               <GroupIcon style={{ marginRight: 5 }} />
@@ -284,11 +284,11 @@ const SubPage = () => {
                 ))
               ) : (
                 <div className={classes.noPosts}>
-                  <PostAddIcon color="primary" fontSize="large" />
-                  <Typography variant="h5" color="secondary">
+                  <PostAddIcon color='primary' fontSize='large' />
+                  <Typography variant='h5' color='secondary'>
                     No Posts Yet
                   </Typography>
-                  <Typography variant="h6" color="secondary">
+                  <Typography variant='h6' color='secondary'>
                     Be the first one to post in r/{subredditName}!
                   </Typography>
                 </div>

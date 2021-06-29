@@ -63,7 +63,7 @@ export const useNavStyles = makeStyles(
     },
     navButtons: {
       '&:hover': {
-        backgroundColor: '#ffe5d8',
+        backgroundColor: 'primary',
       },
     },
     search: {
@@ -235,7 +235,7 @@ export const useCardStyles = makeStyles(
       flexDirection: 'column',
       width: 30,
       alignItems: 'center',
-      backgroundColor: theme.palette.type === 'light' ? '#f7f5f3' : '#2f271f',
+      backgroundColor: theme.palette.type === 'primary',
     },
     thumbnailWrapper: {
       alignSelf: 'center',
@@ -265,7 +265,7 @@ export const useCardStyles = makeStyles(
     },
     commentsBtn: {
       textTransform: 'none',
-      color: theme.palette.type === 'light' ? '#787878' : '#dadada',
+      color: theme.palette.type === 'primary',
     },
     title: {
       marginRight: 5,
@@ -371,7 +371,7 @@ export const usePostCommentsStyles = makeStyles(
       width: 50,
       alignItems: 'center',
       justifyContent: 'flex-start',
-      backgroundColor: theme.palette.type === 'light' ? '#f7f5f3' : '#2f271f',
+      backgroundColor: theme.palette.type === 'primary',
       [theme.breakpoints.down('xs')]: {
         width: 35,
       },

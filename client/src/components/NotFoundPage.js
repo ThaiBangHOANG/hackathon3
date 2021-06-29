@@ -9,15 +9,15 @@ const NotFoundPage = () => {
 
   return (
     <Container disableGutters>
-      <Paper variant="outlined" className={classes.mainPaper}>
+      <Paper variant='outlined' className={classes.mainPaper}>
         <div className={classes.textWrapper}>
-          <SvgIcon color="primary" className={classes.icon}>
+          <SvgIcon color='primary' className={classes.icon}>
             <Error404 />
           </SvgIcon>
-          <Typography color="secondary" variant="h4">
+          <Typography color='secondary' variant='h4'>
             Page Not Found
           </Typography>
-          <Typography color="secondary" variant="h6">
+          <Typography color='secondary' variant='h6'>
             The page you requested does not exist
           </Typography>
         </div>

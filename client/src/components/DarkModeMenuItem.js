@@ -17,7 +17,7 @@ const DarkModeMenuItem = ({ closeMenu, navItem }) => {
 
   if (navItem) {
     return (
-      <IconButton color="primary" onClick={handleDarkMode}>
+      <IconButton color='primary' onClick={handleDarkMode}>
         {darkMode ? <Brightness4Icon /> : <Brightness7Icon />}
       </IconButton>
     );

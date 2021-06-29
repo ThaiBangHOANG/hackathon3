@@ -12,21 +12,21 @@ const ErrorPage = ({ errorMsg }) => {
     <div style={{ textAlign: 'center', marginTop: '20%' }}>
       {isNotFoundError ? (
         <SvgIcon
-          color="primary"
+          color='primary'
           style={{ fontSize: '8em', marginBottom: '0.5em' }}
         >
           <Error404 />
         </SvgIcon>
       ) : (
         <ErrorOutlineIcon
-          color="primary"
+          color='primary'
           style={{ fontSize: '8em', marginBottom: '0.5em' }}
         />
       )}
-      <Typography color="secondary" variant="h4">
+      <Typography color='secondary' variant='h4'>
         {isNotFoundError ? `404 Not Found` : 'Error'}
       </Typography>
-      <Typography color="secondary" variant="h6">
+      <Typography color='secondary' variant='h6'>
         {errorMsg}
       </Typography>
     </div>
