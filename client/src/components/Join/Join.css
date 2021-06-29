@@ -14,11 +14,12 @@ html, body {
 
 .joinOuterContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   height: 100vh;
   align-items: center;
   background-color: #1A1A1D;
+  
 }
 
 .joinInnerContainer {
@@ -42,7 +43,7 @@ html, body {
     color: #fff !important;
     text-transform: uppercase;
     text-decoration: none;
-    background: #2979FF;
+    background: #1dbf73;
     padding: 20px;
     border-radius: 5px;
     display: inline-block;
@@ -60,7 +61,7 @@ html, body {
   }
 
   .joinInnerContainer {
-    width: 90%;
+    width: 50%;
   }
 
 
@@ -68,4 +69,22 @@ html, body {
 
 button:focus {
   outline: 0;
+}
+
+
+.chatRoom {
+  display: inline-block;
+  border: 20px solid #1dbf73;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border-radius: 15px;
+}
+
+ul>li {
+  list-style-type: none;
+  text-align: left;
+  line-height: 2;
+  font-size: 1rem;
+  font-weight: 300;
 }
