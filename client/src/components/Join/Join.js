@@ -20,13 +20,19 @@ export default function SignIn() {
           />
         </div>
         <div>
-          <input
+          <select
             placeholder='Room'
             className='joinInput mt-20'
             type='text'
             onChange={(event) => setRoom(event.target.value)}
-          />
+          >
+            {' '}
+            <option value='A'>DEV</option>
+            <option value='B'>DATA</option>
+            <option value='C'>DESIGN</option>
+          </select>
         </div>
+
         <Link
           onClick={(e) => (!name || !room ? e.preventDefault() : null)}
           to={`/chat?name=${name}&room=${room}`}
