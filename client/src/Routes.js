@@ -11,6 +11,8 @@ import NotFoundPage from './components/NotFoundPage';
 
 import { Container } from '@material-ui/core/';
 import { useMainPaperStyles } from './styles/muiStyles';
+import Chat from './components/Chat/Chat';
+import Join from './components/Join/Join';
 
 const Routes = () => {
   const classes = useMainPaperStyles();
@@ -36,6 +38,12 @@ const Routes = () => {
       </Route>
       <Route exact path='/search/:query'>
         <SearchResults />
+      </Route>
+      <Route exact path='/cha'>
+        <Join />
+      </Route>
+      <Route exact path='/chat'>
+        <Chat />
       </Route>
       <Route>
         <NotFoundPage />
